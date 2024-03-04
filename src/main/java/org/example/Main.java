@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -72,7 +73,9 @@ public class Main extends JFrame {
             try {
                 String copiedText = (String) clipboard.getData(DataFlavor.stringFlavor);
                 copiedStringBuilder.append(copiedText).append("\n");
+                System.out.println(copiedText);
                 iterations++;
+                clipboard.setContents(new StringSelection(""), null);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
