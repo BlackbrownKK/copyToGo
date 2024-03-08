@@ -51,7 +51,7 @@ public class Main extends JFrame {
         timer = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 checkClipboard();
-                if (iterations >= 25) {
+                if (iterations >= 250) {
                     stopMonitoring();
                     resultTextArea.setText(copiedStringBuilder.toString());
                 }
